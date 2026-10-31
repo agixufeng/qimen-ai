@@ -109,3 +109,4 @@ v0.1所述36盘证据等级、历法依赖边界及辛辛疑字待核状态继�
 - format、typecheck、147项单测、生产构建、全部10000条数据检查通过；生产依赖npm audit为0漏洞。核心布盘和知识数据未改。
 - 新/qimen-ai/子路径的20组真实Chrome流程通过（11.8秒、退出0、2workers），覆盖手机、下载、重放、错误提示和刷新。初次沙箱启动失败；沙箱外5workers曾有一个context启动超时及两条旧路径断言失败，修正实际名称路径后2workers全量重跑通过。未触及用户日常Chrome数据。
 - 原有文档中/qimen-dunjia/是历史验收路径；新测试保留JSON格式名和localStorage键，避免破坏旧存盘与偏好。
+- 首次远端Verify已通过Node22的147项单测、构建、数据检查、发布包隔离安装和源码冷构建；失败于ubuntu-latest上的Playwright系统依赖安装：运行器已升至26.04，锁定Playwright不支持。CI与Pages固定ubuntu-24.04后重跑，最终结论以对应run为准。

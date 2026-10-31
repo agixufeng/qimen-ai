@@ -18,6 +18,8 @@ Actions → Deploy Pages manually → Run workflow，选择默认分支。构建
 
 Action固定在本次核对的官方提交：checkout v7、setup-node v7、configure-pages v5、upload-pages-artifact v4、deploy-pages v5。这是已核ref组合，不宣称各文档或starter示例全部同步。Action自身Node运行时与项目指定Node22构建环境不同；远端执行情况以实际run日志为准，本机包验证不能代替。
 
+构建与部署运行器固定为ubuntu-24.04。2026-10-31首次远端运行显示ubuntu-latest已是26.04，与锁定Playwright1.56.1不兼容；固定已支持系统，避免别名升级改变验收环境。
+
 ## 上线验收
 
 实际deployment输出page_url后才登记公开网址。验证：首页起局、盘例计数10000/9998/2/0、筛选与详情重放、单条JSON和全量JSONL下载、古籍/开发者hash路由刷新、390px布局，以及控制台和资源请求。Vite采用相对base，盘例采用同源相对路径，不能把本机127.0.0.1链接填入公开README或宣传稿。
