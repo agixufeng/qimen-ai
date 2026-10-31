@@ -19,6 +19,23 @@ test('开发者入口在390px可读并支持静态子路径刷新', async ({ pag
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('./#/developers');
   await expect(page.getByRole('heading', { name: '开发者入口' })).toBeVisible();
+  const developer = page.locator('main');
+  const resources = page.locator('footer');
+  for (const area of [developer, resources]) {
+    await expect(area.getByRole('link', { name: 'GitHub源代码', exact: true })).toHaveAttribute(
+      'href',
+      'https://github.com/agixufeng/qimen-ai',
+    );
+    await expect(area.getByRole('link', { name: '下载包', exact: true })).toHaveAttribute(
+      'href',
+      'https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0',
+    );
+  }
+  await expect(developer).not.toContainText('公开仓库与演示站地址确认后补充');
+  await expect(developer.getByRole('link', { name: '安装说明', exact: true })).toHaveAttribute(
+    'href',
+    'https://github.com/agixufeng/qimen-ai#命令行与下载包',
+  );
   await expect(page.getByTestId('developer-cli')).toContainText('--datetime 2026-10-28T12:00:00');
   await expect(page.getByTestId('developer-rules')).toContainText('UTC+8');
   await expect(page.getByTestId('developer-rules')).toContainText('0.1.0');
@@ -30,6 +47,7 @@ test('开发者入口在390px可读并支持静态子路径刷新', async ({ pag
   await page.getByRole('link', { name: '来源', exact: true }).click();
   await page.reload();
   await expect(page.getByRole('heading', { name: '依据与版本' })).toBeVisible();
+  await expect(resources.getByRole('link', { name: 'GitHub源代码', exact: true })).toBeVisible();
   await page.getByRole('link', { name: '古籍', exact: true }).click();
   await expect(page.locator('[data-classic]')).toHaveCount(3);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

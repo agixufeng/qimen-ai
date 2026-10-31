@@ -432,7 +432,19 @@ export function App() {
       <footer>
         <span>奇门研习 · 时家转盘拆补法</span>
         <span>传统术数研习资料 · 解释规则不等于事件结论</span>
-        <a href="#/sources">查看依据</a>
+        <div className="project-resources" role="navigation" aria-label="项目资源">
+          <a href="#/sources">查看依据</a>
+          <a href="https://github.com/agixufeng/qimen-ai" target="_blank" rel="noreferrer">
+            GitHub源代码
+          </a>
+          <a
+            href="https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0"
+            target="_blank"
+            rel="noreferrer"
+          >
+            下载包
+          </a>
+        </div>
       </footer>
     </>
   );

@@ -894,8 +894,14 @@ footer {
   color: #86968d;
   font-size: 10px;
 }
-footer a {
+footer .project-resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
   margin-left: auto;
+}
+footer .project-resources a {
+  white-space: nowrap;
 }
 @media (min-width: 1500px) {
   .palace {
@@ -1163,7 +1169,7 @@ footer a {
   footer span:nth-child(2) {
     width: 100%;
   }
-  footer a {
+  footer .project-resources {
     margin-left: 0;
   }
 }
@@ -2062,6 +2068,13 @@ button:disabled:hover {
 }
 .classic-scope-note a {
   margin: 0 4px;
+}
+.developer-public-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 0 0 24px;
+  font-size: 13px;
 }
 .developer-start {
   padding: 22px 24px;

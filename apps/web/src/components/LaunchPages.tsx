@@ -155,6 +155,25 @@ export function Developers({ engineVersion = '0.1.0' }: { engineVersion?: string
       <p className="lead">
         用确定性接口获得盘面与辅助参数，再按自己的需求展示。浏览器和 Node 本地计算，无需 API Key。
       </p>
+      <div className="developer-public-links" role="navigation" aria-label="开发者资源">
+        <a href="https://github.com/agixufeng/qimen-ai" target="_blank" rel="noreferrer">
+          GitHub源代码
+        </a>
+        <a
+          href="https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0"
+          target="_blank"
+          rel="noreferrer"
+        >
+          下载包
+        </a>
+        <a
+          href="https://github.com/agixufeng/qimen-ai#命令行与下载包"
+          target="_blank"
+          rel="noreferrer"
+        >
+          安装说明
+        </a>
+      </div>
       <div className="developer-start">
         <h3>从源码目录开始</h3>
         <p>准备 Node.js 22 LTS 和 npm，在项目根目录安装依赖并构建：</p>
@@ -162,7 +181,7 @@ export function Developers({ engineVersion = '0.1.0' }: { engineVersion?: string
           <code>{`npm ci\nnpm run build`}</code>
         </pre>
         <p className="small muted">
-          当前是本地发布候选。公开仓库与演示站地址确认后补充；以下示例使用源码构建产物。
+          v0.4.0研习预览版已公开。以下示例使用源码构建产物；直接安装发布包可查看上方安装说明。
         </p>
       </div>
       <CodeSample title="Node 调用示例" value={NODE_EXAMPLE} testId="developer-node" />
