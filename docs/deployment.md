@@ -37,3 +37,5 @@ Action固定在本次核对的官方提交：checkout v7、setup-node v7、confi
 - [deploy-pages](https://github.com/actions/deploy-pages)
 
 2026-10-29已读取官方源文件并核对提交引用；当前没有远端run或实际page_url，未标部署成功。
+
+2026-10-31首次实际部署通过：[Pages run 41185731066](https://github.com/agixufeng/qimen-ai/actions/runs/41185731066)，page_url为https://agixufeng.github.io/qimen-ai/。线上已检查起局、逐符号依据、研习库分型、程序盘重放和390px刷新，无横向溢出。前段“当前没有”仅指10月29日的历史准备阶段。

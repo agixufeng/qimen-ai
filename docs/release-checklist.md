@@ -6,9 +6,11 @@
 tags: [项目/奇门]
 ---
 
-# v0.4.0 待公开清单
+# v0.4.0 发布检查流程
 
 公开候选（逐项见release-files.md）：apps/web源码、packages/core与knowledge源码、fixtures固定盘及推演、tests回归、docs规则/来源/API/验收、.github CI和模板、package与lockfile、许可证及中英文README。
+
+2026-10-31首发已执行：[公开仓库](https://github.com/agixufeng/qimen-ai)、[Release](https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0)、[演示](https://agixufeng.github.io/qimen-ai/)。下列步骤保留为后续发布流程；本次用户授权及执行证据见verification.md。
 
 排除：node_modules、dist、.local、Playwright报告/截图、.env、系统文件。初版没有私人生辰、咨询记录、密钥、现代书籍全文或收费课程逐字稿。
 

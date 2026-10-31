@@ -110,3 +110,12 @@ v0.1所述36盘证据等级、历法依赖边界及辛辛疑字待核状态继�
 - 新/qimen-ai/子路径的20组真实Chrome流程通过（11.8秒、退出0、2workers），覆盖手机、下载、重放、错误提示和刷新。初次沙箱启动失败；沙箱外5workers曾有一个context启动超时及两条旧路径断言失败，修正实际名称路径后2workers全量重跑通过。未触及用户日常Chrome数据。
 - 原有文档中/qimen-dunjia/是历史验收路径；新测试保留JSON格式名和localStorage键，避免破坏旧存盘与偏好。
 - 首次远端Verify已通过Node22的147项单测、构建、数据检查、发布包隔离安装和源码冷构建；失败于ubuntu-latest上的Playwright系统依赖安装：运行器已升至26.04，锁定Playwright不支持。CI与Pages固定ubuntu-24.04后重跑，最终结论以对应run为准。
+
+## v0.4.0 公开首发结果（2026-10-31）
+
+- [Verify 41185712573](https://github.com/agixufeng/qimen-ai/actions/runs/41185712573)在ubuntu-24.04与Node22上完整通过，包括147项单测、生产构建、10000条数据、发布包/源码冷构建及20组Chromium流程。
+- [Pages 41185731066](https://github.com/agixufeng/qimen-ai/actions/runs/41185731066)的build和deploy均成功，实际page_url为https://agixufeng.github.io/qimen-ai/，部署对应提交7a9e01bd383ace471b315485c41bdb28408e49c6。
+- [v0.4.0研习预览版](https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0)已公开，标签指向上述提交。119个源码文件逐个Git blob哈希核对；11个人工附件的名称、字节数与GitHub服务端SHA-256核对。随后匿名下载全部11件，与本机最终包逐字节相同；GitHub另提供2个自动源码归档，不混作人工附件计数。
+- 最终本机包再次经原始成员检查：源码119文件、研习库104文件、网页109文件，无AppleDouble或PAX xattr；源码解压后冷安装、全测、构建及CLI通过。旧污染候选没有上传。
+- 在线真实Chrome检查固定合成默认盘（2026-10-28 12:00 UTC+8）、时空申详情、库计数10000/9998/2/0、古例缺日期不可重排和生成盘基础盘一致；390px刷新后无横向溢出。程序盘可打开工作台；检查使用公开合成输入，无私人占事备注。
+- GitHub公开、可下载、网站可用不等于外部人工规则校核、预测有效性或增长目标达成。npm registry、社交发文及AI解读未在本次执行。
