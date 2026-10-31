@@ -1,0 +1,37 @@
+{
+  "name": "qimen-dunjia",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @qimen/web",
+    "build": "npm run build -w @qimen/core && npm run build -w @qimen/knowledge && npm run build -w @qimen/cases && npm run build -w @qimen/cli && npm run data:build && npm run build -w @qimen/web",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build -w @qimen/core && tsx --test tests/*.test.ts",
+    "test:browser": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "format": "prettier --write --single-quote --print-width 100 \"apps/web/src/**/*.{ts,tsx,css}\" \"packages/*/src/**/*.ts\" \"tests/**/*.ts\" \"apps/web/tests/**/*.ts\" \"scripts/**/*.mjs\" apps/web/vite.config.ts playwright.config.ts",
+    "format:check": "prettier --check --single-quote --print-width 100 \"apps/web/src/**/*.{ts,tsx,css}\" \"packages/*/src/**/*.ts\" \"tests/**/*.ts\" \"apps/web/tests/**/*.ts\" \"scripts/**/*.mjs\" apps/web/vite.config.ts playwright.config.ts",
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "release:smoke": "node scripts/smoke-release.mjs",
+    "release:source-smoke": "node scripts/smoke-source.mjs",
+    "data:build": "node scripts/build-study-data.mjs",
+    "data:check": "node scripts/check-study-data.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "22.18.6",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "prettier": "3.6.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

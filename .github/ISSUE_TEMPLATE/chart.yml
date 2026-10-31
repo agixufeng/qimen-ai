@@ -1,0 +1,16 @@
+name: 排盘结果疑问
+description: 附完整规则版本及对照来源；请使用非私人示例
+body:
+  - type: textarea
+    id: input
+    attributes:
+      label: UTC+8输入与规则版本
+      description: 年月日时分秒、基础profile/engineVersion/calendarVersion；辅助问题另附annotation profile版本、盘层、主寄、地支与显示选项。请去掉备注和私人资料。
+    validations:
+      required: true
+  - type: textarea
+    id: difference
+    attributes:
+      label: 实际字段、期望字段、来源章节与复现步骤
+    validations:
+      required: true

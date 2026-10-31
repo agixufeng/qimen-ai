@@ -1,0 +1,24 @@
+{
+  "name": "@qimen/knowledge",
+  "version": "0.4.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "DATA-LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}

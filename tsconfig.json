@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@qimen/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@qimen/knowledge": [
+        "packages/knowledge/src/index.ts"
+      ],
+      "@qimen/cases": [
+        "packages/cases/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "packages",
+    "apps",
+    "tests",
+    "playwright.config.ts"
+  ]
+}

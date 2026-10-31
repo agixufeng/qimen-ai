@@ -1,0 +1,243 @@
+{
+  "format": "qimen-dunjia",
+  "version": 1,
+  "chart": {
+    "schemaVersion": "1.0.0",
+    "engineVersion": "0.1.0",
+    "calendarVersion": "lunar-javascript@1.7.7",
+    "profile": {
+      "id": "shijia-zhuanpan-chaibu-v1",
+      "version": "1.0.0",
+      "offsetMinutes": 480,
+      "dayBoundary": 23,
+      "centerHost": 2
+    },
+    "input": {
+      "year": 2026,
+      "month": 10,
+      "day": 28,
+      "hour": 12,
+      "minute": 0,
+      "second": 0
+    },
+    "pillars": {
+      "year": "丙午",
+      "month": "戊戌",
+      "day": "乙亥",
+      "hour": "壬午"
+    },
+    "term": {
+      "name": "霜降",
+      "startsAt": "2026-10-23 17:37:57+08:00",
+      "nextAt": "2026-11-07 17:52:05+08:00"
+    },
+    "dun": "阴遁",
+    "ju": 2,
+    "yuan": "下元",
+    "fuTou": "甲戌",
+    "xunShou": "甲戌",
+    "hiddenStem": "己",
+    "chiefStar": {
+      "name": "天蓬",
+      "origin": 1,
+      "palace": 7
+    },
+    "chiefDoor": {
+      "name": "休门",
+      "origin": 1,
+      "palace": 2,
+      "rawPalace": 2
+    },
+    "palaces": [
+      {
+        "id": 1,
+        "name": "坎",
+        "direction": "北",
+        "element": "水",
+        "earthStem": "己",
+        "heavenStems": [
+          "乙"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天冲"
+        ],
+        "door": "杜门",
+        "deity": "九地"
+      },
+      {
+        "id": 2,
+        "name": "坤",
+        "direction": "西南",
+        "element": "土",
+        "earthStem": "戊",
+        "heavenStems": [
+          "癸"
+        ],
+        "hostedEarthStems": [
+          "丁"
+        ],
+        "stars": [
+          "天心"
+        ],
+        "door": "休门",
+        "deity": "螣蛇"
+      },
+      {
+        "id": 3,
+        "name": "震",
+        "direction": "东",
+        "element": "木",
+        "earthStem": "乙",
+        "heavenStems": [
+          "庚"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天英"
+        ],
+        "door": "死门",
+        "deity": "白虎"
+      },
+      {
+        "id": 4,
+        "name": "巽",
+        "direction": "东南",
+        "element": "木",
+        "earthStem": "丙",
+        "heavenStems": [
+          "戊",
+          "丁"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天芮",
+          "天禽"
+        ],
+        "door": "惊门",
+        "deity": "六合"
+      },
+      {
+        "id": 5,
+        "name": "中",
+        "direction": "中央",
+        "element": "土",
+        "earthStem": "丁",
+        "heavenStems": [],
+        "hostedEarthStems": [],
+        "stars": [],
+        "door": null,
+        "deity": null
+      },
+      {
+        "id": 6,
+        "name": "乾",
+        "direction": "西北",
+        "element": "金",
+        "earthStem": "癸",
+        "heavenStems": [
+          "辛"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天任"
+        ],
+        "door": "伤门",
+        "deity": "九天"
+      },
+      {
+        "id": 7,
+        "name": "兑",
+        "direction": "西",
+        "element": "金",
+        "earthStem": "壬",
+        "heavenStems": [
+          "己"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天蓬"
+        ],
+        "door": "生门",
+        "deity": "值符"
+      },
+      {
+        "id": 8,
+        "name": "艮",
+        "direction": "东北",
+        "element": "土",
+        "earthStem": "辛",
+        "heavenStems": [
+          "丙"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天辅"
+        ],
+        "door": "景门",
+        "deity": "玄武"
+      },
+      {
+        "id": 9,
+        "name": "离",
+        "direction": "南",
+        "element": "火",
+        "earthStem": "庚",
+        "heavenStems": [
+          "壬"
+        ],
+        "hostedEarthStems": [],
+        "stars": [
+          "天柱"
+        ],
+        "door": "开门",
+        "deity": "太阴"
+      }
+    ],
+    "trace": [
+      {
+        "ruleId": "TIME-01",
+        "title": "固定 UTC+8 与子初换日",
+        "detail": "公历输入保留；23点起按下一干支日计日柱及时干。此盘日柱乙亥，时柱壬午。",
+        "sourceId": "project-profile"
+      },
+      {
+        "ruleId": "TERM-01",
+        "title": "节气按真实时刻判断",
+        "detail": "霜降从2026-10-23 17:37:57+08:00开始；不使用时辰中点替代交节时刻。",
+        "sourceId": "shenqi-setup"
+      },
+      {
+        "ruleId": "JU-01",
+        "title": "甲己符头定三元",
+        "detail": "日柱乙亥，向前取符头甲戌，属下元；霜降用阴遁2局。",
+        "sourceId": "shenqi-setup"
+      },
+      {
+        "ruleId": "EARTH-01",
+        "title": "地盘布三奇六仪",
+        "detail": "戊从2宫起，依戊己庚辛壬癸丁丙乙逆数九宫；中五原干丁另寄坤。",
+        "sourceId": "shenqi-setup"
+      },
+      {
+        "ruleId": "CHIEF-01",
+        "title": "旬首与值符星",
+        "detail": "壬午属甲戌旬，遁己在1宫；天蓬为值符星，随地盘时干至7宫。",
+        "sourceId": "shenqi-setup"
+      },
+      {
+        "ruleId": "DOOR-01",
+        "title": "值使随时支数宫",
+        "detail": "休门为值使；自旬首原1宫逆数8步到2宫。",
+        "sourceId": "project-profile"
+      },
+      {
+        "ruleId": "RING-01",
+        "title": "星门转排与八神",
+        "detail": "八方环序1→8→3→4→9→2→7→6；星干转6位，门转5位；天禽随天芮；八神值符起7宫，逆时针排。",
+        "sourceId": "project-profile"
+      }
+    ]
+  },
+  "note": "公开兼容性演示"
+}

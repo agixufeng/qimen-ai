@@ -1,0 +1,30 @@
+{
+  "name": "@qimen/cli",
+  "version": "0.4.0",
+  "description": "Offline UTC+8 Qimen chart CLI with reproducible JSON and SVG output",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "qimen": "dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@qimen/core": "0.4.0"
+  }
+}
