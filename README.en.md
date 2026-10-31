@@ -10,17 +10,27 @@ tags: [项目/奇门]
 
 [Repository](https://github.com/agixufeng/qimen-ai) · [Live demo](https://agixufeng.github.io/qimen-ai/) · [Downloads](https://github.com/agixufeng/qimen-ai/releases)
 
+[简体中文](README.md)
+
 The repository is named `qimen-ai`; AI interpretation is not implemented in this release.
 
 A TypeScript Qimen Dunjia turning-board engine and a local-first React/Vite demo. Version 0.4.0 is a candidate for external rule review, not an independently certified calculation standard.
 
 Fixed UTC+8 standard time, Gregorian years 1900–2100, chaibu method, day stem changes at 23:00, center hosted by Kun (2), Tianqin travels with Tianrui. The original civil timestamp remains unchanged for solar-term comparisons. No accounts, API keys, database, remote fonts or telemetry.
 
+## Try the workbench
+
+The study UI is currently in Chinese. Open the [live chart](https://agixufeng.github.io/qimen-ai/#/chart) with the public synthetic input `2026-10-28 12:00:00` UTC+8. Click `时空 申` in Kun palace (2) to inspect the hour pillar, xun, affected branch and rule source. On mobile, details appear below the chart.
+
+The [study corpus](https://agixufeng.github.io/qimen-ai/#/cases) separates generated charts from classical hypothetical examples. Filter `程序盘例`, open `查看详情`, then `在工作台打开` to replay a generated record. Classical records without a complete date retain their supplied conditions.
+
 ## Run
 
 Use Node.js 22 LTS and npm 10+.
 
 ```sh
+git clone https://github.com/agixufeng/qimen-ai.git
+cd qimen-ai
 npm ci
 npm run dev
 npm run typecheck
@@ -43,6 +53,19 @@ The 81 ordered stem pairs default to *Shenqi Zhi Men*, with independently author
 Code: MIT. Original documentation, knowledge summaries and fixtures: CC BY 4.0. Third-party references retain their rights; no modern books or course transcripts are distributed. See the Chinese README and docs for the full rule profile, references and publication checklist. Deployment results are recorded in the repository's GitHub Actions runs.
 
 ## Release candidate and CLI
+
+To use the CLI without building the website, install all four packages from the public GitHub Release inside your Node.js project:
+
+```sh
+npm install --ignore-scripts \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-core-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-knowledge-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-cases-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-cli-0.4.0.tgz
+npx --no-install qimen chart --datetime 2026-10-28T12:00:00
+```
+
+Installation needs network access for these tarballs and the pinned calendar dependency. Subsequent CLI calculation is offline. These are GitHub-hosted tarballs, not npm-registry publications. Inventory and SHA-256 files are attached to the same [release](https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0).
 
 After building, run `node packages/cli/dist/bin.js chart --datetime 2026-10-28T12:00:00`. JSON is replayable; `--professional --format svg` exports annotations. No clock or network is read during calculation. UTC+8 timestamps must omit offsets.
 

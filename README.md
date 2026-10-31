@@ -10,17 +10,29 @@ tags: [项目/奇门]
 
 [GitHub](https://github.com/agixufeng/qimen-ai) · [在线演示](https://agixufeng.github.io/qimen-ai/) · [下载包](https://github.com/agixufeng/qimen-ai/releases)
 
+[English](README.en.md)
+
 仓库名为 `qimen-ai`；本版提供确定性排盘与研习能力，AI解读尚未实现。
 
 时家转盘拆补法的 TypeScript 排盘核心、规则出处与本地研习工作台。v0.4.0 是待外部校核的开源候选版，适合检查与学习盘法。
 
 **范围：固定 UTC+8、公历1900—2100、子初23点换干支日、中五寄坤、天禽随芮。** 核心在浏览器本地计算，无账号、API Key、数据库、遥测或外部字体请求。页面首次展示公开演示时间，点击“现在”才读取当前时间。
 
+## 直接试用
+
+1. [打开工作台](https://agixufeng.github.io/qimen-ai/#/chart)，以公开合成时间 `2026-10-28 12:00:00`（UTC+8）起局。
+2. 点击坤二宫的“时空 申”，查看时柱、旬首、具体空支、条件和规则来源。手机在盘面下方查看详情。
+3. [打开盘例](https://agixufeng.github.io/qimen-ai/#/cases)，筛选“程序盘例”，点击“查看详情”后在工作台打开。古籍教学例保留原条件，缺日期时不重排。
+
+查看双书异名时，可到[81格](https://agixufeng.github.io/qimen-ai/#/combinations)搜索“乙丁”。默认条目与御定对照分别保留出处。
+
 ## 快速开始
 
 Node.js 22 LTS，npm 10 或更新版本：
 
 ```sh
+git clone https://github.com/agixufeng/qimen-ai.git
+cd qimen-ai
 npm ci
 npm run dev
 ```
@@ -41,6 +53,19 @@ npm run test:browser
 
 ## 命令行与下载包
 
+只调用排盘时，可在已有Node工程中直接安装[v0.4.0 Release](https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0)的四个包，无需先构建网站：
+
+```sh
+npm install --ignore-scripts \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-core-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-knowledge-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-cases-0.4.0.tgz \
+  https://github.com/agixufeng/qimen-ai/releases/download/v0.4.0/qimen-cli-0.4.0.tgz
+npx --no-install qimen chart --datetime 2026-10-28T12:00:00
+```
+
+首次安装需要联网下载这些包及固定历法依赖，安装后的CLI计算可离线。文件清单与SHA-256在同一Release；手动下载四个tgz时也可按[版本说明](docs/release-notes.md)从本地安装。
+
 源码构建后可直接离线计算（首次npm安装依赖需要网络）：
 
 ```sh
@@ -48,7 +73,7 @@ node packages/cli/dist/bin.js chart --datetime 2026-10-28T12:00:00
 node packages/cli/dist/bin.js chart --datetime 2026-10-28T12:00:00 --professional --day-horse --format svg > qimen.svg
 ```
 
-时间固定UTC+8，不附Z或偏移。默认输出可重放JSON，错误写stderr并退出2。包尚未发布到npm registry；可通过本地候选tgz安装，见[候选说明](docs/release-notes.md)。
+时间固定UTC+8，不附Z或偏移。默认输出可重放JSON，错误写stderr并退出2。包尚未发布到npm registry；上面的地址明确从GitHub Release安装，见[版本说明](docs/release-notes.md)。
 
 ```sh
 npm run release:prepare
