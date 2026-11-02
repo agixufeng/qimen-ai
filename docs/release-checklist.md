@@ -12,7 +12,7 @@ tags: [项目/奇门]
 
 2026-10-31首发已执行：[公开仓库](https://github.com/agixufeng/qimen-ai)、[Release](https://github.com/agixufeng/qimen-ai/releases/tag/v0.4.0)、[演示](https://agixufeng.github.io/qimen-ai/)。下列步骤保留为后续发布流程；本次用户授权及执行证据见verification.md。
 
-排除：node_modules、dist、.local、Playwright报告/截图、.env、系统文件。初版没有私人生辰、咨询记录、密钥、现代书籍全文或收费课程逐字稿。
+排除：node_modules、dist、.local、Playwright报告与未审阅截图、.env、系统文件。docs/assets仅含逐项审阅并记录来源的原创公开演示素材；不批量收录测试截图。初版没有私人生辰、咨询记录、密钥、现代书籍全文或收费课程逐字稿。
 
 发布前：
 1. npm ci；npm run format:check；npm run typecheck；npm test；npm run build；npm run data:check；npm run test:browser；npm run release:prepare；npm run release:smoke；npm run release:source-smoke。

@@ -8,7 +8,7 @@ tags: [项目/奇门]
 
 # v0.4.0 公开文件清单
 
-共119个源码文件，含仅手动触发的Pages配置。2026-10-31用户确认公开代码、下载包与在线演示，最终仓库名为agixufeng/qimen-ai。生成研习数据不进源码Git，另在静态站/独立数据包中分发。内部研究、宣传草稿、素材、本机验收和用户输入都不进入公开源码。
+首发共119个源码文件，含仅手动触发的Pages配置。2026-10-31用户确认公开代码、下载包与在线演示，最终仓库名为agixufeng/qimen-ai。生成研习数据不进源码Git，另在静态站/独立数据包中分发。内部研究、宣传草稿、未逐项审阅的素材、本机验收报告和用户输入都不进入公开源码。2026-11-02新增两项已审阅的原创公开演示素材（下列docs/assets），当前源码清单共121项；既有v0.4.0下载附件保持不变。
 
 - `.github/ISSUE_TEMPLATE/chart.yml`
 - `.github/PULL_REQUEST_TEMPLATE.md`
@@ -46,6 +46,8 @@ tags: [项目/奇门]
 - `apps/web/vite.config.ts`
 - `docs/annotations.md`
 - `docs/api.md`
+- `docs/assets/README.md`
+- `docs/assets/workbench-2026-10-28.png`
 - `docs/congzhen-reference.md`
 - `docs/deployment.md`
 - `docs/project-status.md`

@@ -18,6 +18,10 @@ A TypeScript Qimen Dunjia turning-board engine and a local-first React/Vite demo
 
 Fixed UTC+8 standard time, Gregorian years 1900–2100, chaibu method, day stem changes at 23:00, center hosted by Kun (2), Tianqin travels with Tianrui. The original civil timestamp remains unchanged for solar-term comparisons. No accounts, API keys, database, remote fonts or telemetry.
 
+[![Standard chart and annotations for the public synthetic example](docs/assets/workbench-2026-10-28.png)](https://agixufeng.github.io/qimen-ai/#/chart)
+
+Local browser acceptance capture using the public synthetic input `2026-10-28 12:00:00 UTC+8`. Click the image to open the live workbench. [Asset provenance](docs/assets/README.md).
+
 ## Try the workbench
 
 The study UI is currently in Chinese. Open the [live chart](https://agixufeng.github.io/qimen-ai/#/chart) with the public synthetic input `2026-10-28 12:00:00` UTC+8. Click `时空 申` in Kun palace (2) to inspect the hour pillar, xun, affected branch and rule source. On mobile, details appear below the chart.
