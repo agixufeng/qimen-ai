@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validatePublicPaths, assertPublicText } from '../scripts/release-lib.mjs';
@@ -157,4 +158,15 @@ test('candidate build status remains truthful after distribution', () => {
   writeFileSync(join(dir, 'MANIFEST.json'), JSON.stringify(manifest));
   sum();
   assert.doesNotThrow(() => verifyReleaseFiles(dir, '0.4.0'));
+});
+
+test('source inventory includes staged additions and excludes untracked research drafts', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'qimen-source-list-'));
+  execFileSync('git', ['init', '--quiet'], { cwd: dir });
+  mkdirSync(join(dir, 'docs'));
+  writeFileSync(join(dir, 'README.md'), 'Public project');
+  writeFileSync(join(dir, 'docs/staged.md'), 'Reviewed new documentation');
+  execFileSync('git', ['add', '--', 'README.md', 'docs/staged.md'], { cwd: dir });
+  writeFileSync(join(dir, 'docs/research-draft.md'), 'Unreviewed draft');
+  assert.deepEqual(releaseChecks.collectPublicSourcePaths(dir), ['README.md', 'docs/staged.md']);
 });

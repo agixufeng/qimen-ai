@@ -1,3 +1,5 @@
+import { execFileSync } from 'node:child_process';
+
 const ROOT_FILES = new Set([
   '.gitignore',
   'AGENTS.md',
@@ -45,6 +47,21 @@ export function validatePublicPaths(paths) {
     }
   }
 }
+export function collectPublicSourcePaths(root) {
+  const paths = [
+    ...new Set(
+      execFileSync('git', ['ls-files', '--cached', '-z'], {
+        cwd: root,
+        encoding: 'utf8',
+      })
+        .split('\0')
+        .filter(Boolean),
+    ),
+  ].sort();
+  validatePublicPaths(paths);
+  return paths;
+}
+
 export function assertPublicText(path, text) {
   if (
     /(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{22,}|sk-[A-Za-z0-9_-]{24,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|\/Users\/xf(?:\/|\b))/.test(

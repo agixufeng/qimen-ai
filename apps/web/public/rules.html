@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="qimen-ai时家转盘拆补规则：1900—2100年、固定UTC+8、23点换干支日、中五寄坤、天禽随芮；说明复现方法、参考资料与验证边界。" />
+  <link rel="canonical" href="https://agixufeng.github.io/qimen-ai/rules.html" />
+  <link rel="stylesheet" href="./guide.css" />
+  <title>奇门排盘的时间、拆补规则与验证边界｜奇门研习 qimen-ai</title>
+</head>
+<body>
+  <header><nav aria-label="项目导航"><a href="./">排盘工作台</a><a href="./about.html">功能与安装</a><a href="https://github.com/agixufeng/qimen-ai">GitHub仓库</a></nav></header>
+  <main>
+    <h1>奇门研习的时间规则与验证边界</h1>
+    <p>本项目使用时家转盘拆补法，输入为固定UTC+8标准时间，公历范围1900—2100年；23:00更换干支日，中五寄坤、天禽随天芮。这是本项目的明确取法，不代表所有流派都使用同一规则。</p>
+    <h2>复现一个盘，需要记录什么？</h2>
+    <p>保存完整年月日时分秒、时间口径、基础引擎与规则版本，并保留JSON。复核时使用相同输入和规则。当前显示层开关只改变展示，不改变基础布盘。</p>
+    <dl>
+      <dt>时区</dt><dd>固定UTC+8。不会按浏览器所在地区自动换算，不自动校正历史夏令时或真太阳时。其他时间口径需先明确换算。</dd>
+      <dt>换日与交节</dt><dd>23点改变干支日与符头，原公历输入仍保留；节气按实际输入时刻判断，不因为换干支日而挪到次日。</dd>
+      <dt>定局</dt><dd>按符头确定上中下元，使用当前节气局表；本版不补置闰局。</dd>
+      <dt>中宫</dt><dd>中五原地盘干保留，寄干身份单独展示；天禽随天芮，不将原位与寄位混为同一记录。</dd>
+      <dt>知识条目</dt><dd>81组合按天盘干在前、地盘干在后。默认《神奇之门》，《御定奇门宝鉴·混合百神》独立对照，解释与状态按来源保存。</dd>
+    </dl>
+    <h2>先用公开演示输入核对操作</h2>
+    <ol>
+      <li>在<a href="./#/chart">工作台</a>输入2026-10-28与12:00:00，按固定UTC+8起局。</li>
+      <li>查看工作台的时间和“本局采用的约定”，展开起局过程与规则。</li>
+      <li>点击一个盘面符号，核对具体条件与出处，然后导出JSON保留版本与输入。</li>
+    </ol>
+    <p>该操作验证的是页面和复现流程；用同一程序导入并重算一致，不能单独证明算法正确。若与其他软件比较，先确认双方流派、时区、换日和寄宫规则一致。</p>
+    <h2>规则和算法依据在哪里？</h2>
+    <ul>
+      <li><a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/rules.md">基础规则</a>：节气、符头、三元、星门神与格局判据。</li>
+      <li><a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/annotations.md">辅助层规则</a>：旬空、驿马、刑墓等参数。</li>
+      <li><a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/sources.md">来源登记</a>与<a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/terminology.md">术语分歧</a>：区分书目、转录、原创说明与待核项。</li>
+      <li><a href="https://github.com/agixufeng/qimen-ai/blob/main/fixtures/README.md">36个固定参考盘</a>及<a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/verification.md">验收记录</a>：了解现有检查的范围。</li>
+      <li><a href="./#/sources">工作台依据与版本</a>：查看当前使用的规则与知识配置。</li>
+    </ul>
+    <h2>“测试通过”和“转录已核”分别说明什么？</h2>
+    <p>测试可检查程序约束、边界和回归。固定参考盘属于AI辅助独立规则推演，尚非第三方或人工审定金标准；历法依赖的边界测试不构成独立天文历表校验。</p>
+    <p>“转录已核”表示对所登记网页转录的核对，不代表纸本或原刻影印校勘。传统格名与本项目辅助参数分别判断；例如名称里有“墓”，不自动触发落宫入墓标记。</p>
+    <p class="scope">程序可复现、规则有出处、测试通过与现实事件预测有效性是不同问题。本项目提供传统术数规则研习与实现资料，不据此承诺现实结果。</p>
+  </main>
+  <footer><p>核对日期：2026-11-02；基础盘沿用当前规则配置，知识配置以工作台与源码为准。</p><a href="./about.html">返回功能、许可与安装说明 →</a></footer>
+</body>
+</html>

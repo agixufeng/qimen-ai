@@ -28,6 +28,8 @@ The study UI is currently in Chinese. Open the [live chart](https://agixufeng.gi
 
 The [study corpus](https://agixufeng.github.io/qimen-ai/#/cases) separates generated charts from classical hypothetical examples. Filter `程序盘例`, open `查看详情`, then `在工作台打开` to replay a generated record. Classical records without a complete date retain their supplied conditions.
 
+The Chinese-language [project overview](https://agixufeng.github.io/qimen-ai/about.html) and [rule guide](https://agixufeng.github.io/qimen-ai/rules.html) also work without JavaScript.
+
 ## Run
 
 Use Node.js 22 LTS and npm 10+.

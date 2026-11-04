@@ -2542,3 +2542,20 @@ button:disabled:hover {
   color: var(--muted);
   margin: 9px 0 0;
 }
+.project-intro {
+  max-width: 1120px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  line-height: 1.8;
+  border-top: 1px solid #d3dcd7;
+}
+
+.project-intro h2 {
+  font-size: 1.15rem;
+}
+
+.project-intro a {
+  color: #164b43;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

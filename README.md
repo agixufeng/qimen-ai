@@ -30,6 +30,8 @@ tags: [项目/奇门]
 
 查看双书异名时，可到[81格](https://agixufeng.github.io/qimen-ai/#/combinations)搜索“乙丁”。默认条目与御定对照分别保留出处。
 
+先了解功能与取法，可阅读无需JavaScript的[项目说明](https://agixufeng.github.io/qimen-ai/about.html)和[时间规则](https://agixufeng.github.io/qimen-ai/rules.html)。
+
 ## 快速开始
 
 Node.js 22 LTS，npm 10 或更新版本：

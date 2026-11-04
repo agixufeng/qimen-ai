@@ -4,7 +4,7 @@ import { resolve, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import {
-  validatePublicPaths,
+  collectPublicSourcePaths,
   assertPublicText,
   assertArchiveMetadataFree,
 } from './release-lib.mjs';
@@ -13,17 +13,7 @@ const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
 const out = resolve(root, process.argv[2] || `.local/releases/v${pkg.version}`);
 if (!out.startsWith(join(root, '.local') + '/') || existsSync(out))
   throw new Error('Choose a new, non-existing output directory under .local/.');
-const files = [
-  ...new Set(
-    execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
-      cwd: root,
-      encoding: 'utf8',
-    })
-      .split('\0')
-      .filter(Boolean),
-  ),
-].sort();
-validatePublicPaths(files);
+const files = collectPublicSourcePaths(root);
 for (const path of files) {
   if (!lstatSync(join(root, path)).isFile())
     throw new Error(`Non-regular public source requires review: ${path}`);

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="奇门研习qimen-ai的功能、开源许可与本地部署说明：TypeScript时家转盘拆补排盘，固定UTC+8，支持JSON/SVG导出，当前不含AI解读。" />
+  <link rel="canonical" href="https://agixufeng.github.io/qimen-ai/about.html" />
+  <link rel="stylesheet" href="./guide.css" />
+  <title>奇门研习是什么？功能、开源许可与本地部署｜qimen-ai</title>
+</head>
+<body>
+  <header><nav aria-label="项目导航"><a href="./">排盘工作台</a><a href="./rules.html">规则与边界</a><a href="https://github.com/agixufeng/qimen-ai">GitHub仓库</a></nav></header>
+  <main>
+    <h1>奇门研习（qimen-ai）：功能与本地部署</h1>
+    <p>奇门研习是一个开源的时家转盘拆补法排盘与研习项目，包含TypeScript计算引擎、浏览器工作台、规则出处和可重放数据。它适合希望核对排盘过程的研习者，以及需要在本地调用计算接口的开发者。</p>
+    <p class="scope">当前公开版本为v0.4.0研习候选版，待外部校核。仓库名虽含AI，当前尚未实现AI解读。排盘规则可复现，不等于对现实事件的预测效力得到验证。</p>
+    <h2>可以用它做什么？</h2>
+    <ul>
+      <li>按固定UTC+8时间起局，查看九宫盘、四柱旬空、驿马与辅助条件。</li>
+      <li>点击宫位或盘面符号，核对计算条件、规则版本和出处。</li>
+      <li>查看81组天盘干加地盘干组合：《神奇之门》默认，《御定奇门宝鉴》独立对照。</li>
+      <li>主动保存到本机浏览器，导出JSON用于复核，或导出SVG盘面。</li>
+      <li>从源码构建Node命令行，在本地输出JSON或SVG。</li>
+    </ul>
+    <h2>如何直接试用？</h2>
+    <p><a href="./#/chart">打开工作台</a>，使用公开演示时间2026-10-28 12:00:00（UTC+8）。点击“起局”，再点击宫位或“时空”等符号查看说明。这个时间是合成演示输入，不是个人案例。</p>
+    <p>还可以查看<a href="./#/combinations">81组合</a>、<a href="./#/classics">古籍索引</a>、<a href="./#/cases">研习盘例</a>与<a href="./#/developers">开发者入口</a>。交互工作台需要JavaScript，本说明页不需要。</p>
+    <h2>如何在自己的电脑运行？</h2>
+    <p>先准备Node.js 22 LTS及npm 10或更新版本，在终端执行：</p>
+    <pre><code>git clone https://github.com/agixufeng/qimen-ai.git
+cd qimen-ai
+npm ci
+npm run dev</code></pre>
+    <p>打开终端显示的本机地址。首次安装依赖需要联网；排盘计算在本地执行，不需要账号、API Key、数据库或环境变量。生产构建使用<code>npm run build</code>，静态产物在<code>apps/web/dist/</code>。</p>
+    <p>从源码构建后，命令行示例：</p>
+    <pre><code>node packages/cli/dist/bin.js chart --datetime 2026-10-28T12:00:00</code></pre>
+    <p>命令行输入按固定UTC+8解释，不附Z或时区偏移。直接安装发布包的方法见<a href="https://github.com/agixufeng/qimen-ai#命令行与下载包">仓库安装说明</a>；包尚未发布到npm registry。</p>
+    <h2>常见问题</h2>
+    <h3>它是免费的开源项目吗？</h3>
+    <p>源代码采用<a href="https://github.com/agixufeng/qimen-ai/blob/main/LICENSE">MIT许可</a>；原创说明、样例及知识解释采用<a href="https://github.com/agixufeng/qimen-ai/blob/main/DATA-LICENSE">CC BY 4.0</a>，使用时需遵守各自条款。第三方书籍和链接内容不因被引用而自动取得再分发许可。</p>
+    <h3>支持所有奇门流派和真太阳时吗？</h3>
+    <p>当前只实现明确约定的时家转盘拆补法，不含飞盘、置闰、真太阳时、历史夏令时自动校正或终身行运。具体约定见<a href="./rules.html">规则与验证边界</a>。</p>
+    <h3>输入和占事备注会上传吗？</h3>
+    <p>当前工作台在浏览器本地计算，无后端账号或遥测。备注不参与计算，仅主动保存时写入本机浏览器。导出JSON可含备注，SVG不含备注；分享JSON前应自行检查。托管网站和首次下载资源仍需要网络。</p>
+    <h3>一万条盘例是不是一万条真实占验？</h3>
+    <p>不是。当前数据包括9998条程序盘例和2条古籍教学例，来源自述占验为0。程序盘例用于覆盖与重放，不是独立正确答案，更不是实际预测效果证明。</p>
+    <h3>发现排盘或来源问题怎么办？</h3>
+    <p>在<a href="https://github.com/agixufeng/qimen-ai/issues">GitHub Issues</a>提供可复现时间、规则版本、预期与实际差异及依据；请避免附上个人隐私或客户记录。贡献方式见<a href="https://github.com/agixufeng/qimen-ai/blob/main/CONTRIBUTING.md">贡献说明</a>。</p>
+  </main>
+  <footer><p>核对日期：2026-11-02。功能依据v0.4.0源码与README；源码和版本说明是实现真源。</p><a href="./rules.html">继续阅读时间规则与验证边界 →</a></footer>
+</body>
+</html>
