@@ -32,6 +32,8 @@ tags: [项目/奇门]
 
 先了解功能与取法，可阅读无需JavaScript的[项目说明](https://agixufeng.github.io/qimen-ai/about.html)和[时间规则](https://agixufeng.github.io/qimen-ai/rules.html)。
 
+按教程练习首次起局和核对盘面差异。[第一次起局](https://agixufeng.github.io/qimen-ai/getting-started.html) · [排盘差异核对](https://agixufeng.github.io/qimen-ai/chart-differences.html)
+
 ## 快速开始
 
 Node.js 22 LTS，npm 10 或更新版本：

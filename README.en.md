@@ -30,6 +30,8 @@ The [study corpus](https://agixufeng.github.io/qimen-ai/#/cases) separates gener
 
 The Chinese-language [project overview](https://agixufeng.github.io/qimen-ai/about.html) and [rule guide](https://agixufeng.github.io/qimen-ai/rules.html) also work without JavaScript.
 
+Two Chinese-language tutorials cover your first chart and comparisons between chart outputs. [First chart](https://agixufeng.github.io/qimen-ai/getting-started.html) · [Compare charts](https://agixufeng.github.io/qimen-ai/chart-differences.html)
+
 ## Run
 
 Use Node.js 22 LTS and npm 10+.

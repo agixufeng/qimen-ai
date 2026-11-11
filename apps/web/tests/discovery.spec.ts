@@ -26,7 +26,12 @@ test('GEO静态说明不依赖JavaScript，并能沿真实链接阅读规则', a
 
 test('GEO静态说明在390px可读，能进入原排盘工作台', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  for (const path of ['about.html', 'rules.html']) {
+  for (const path of [
+    'about.html',
+    'rules.html',
+    'getting-started.html',
+    'chart-differences.html',
+  ]) {
     await page.goto(`./${path}`);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(

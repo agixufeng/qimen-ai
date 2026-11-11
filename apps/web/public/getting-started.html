@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="用公开演示时间练习奇门排盘：确认UTC+8和拆补取法，辨认盘头与宫位各层，点时空查看来源，再导出和重导入JSON。本教程到字段辨识与复核为止。" />
+  <link rel="canonical" href="https://agixufeng.github.io/qimen-ai/getting-started.html" />
+  <link rel="stylesheet" href="./guide.css" />
+  <title>奇门遁甲排盘怎么看？从时间、局数到宫位的跟做教程｜奇门研习</title>
+</head>
+<body>
+  <header>
+    <nav aria-label="项目导航">
+      <a href="./#/chart">排盘工作台</a>
+      <a href="./about.html">功能与安装</a>
+      <a href="./rules.html">规则与边界</a>
+      <a href="./chart-differences.html">排盘差异核对</a>
+    </nav>
+  </header>
+  <main>
+    <h1>第一次拿到奇门盘，该先看哪里？</h1>
+    <p>第一次打开奇门盘，先核对时间和取法，再辨认局数、值符值使，以及宫位中的天盘干、地盘干、星、门、神。这里用同一张公开演示盘，带你完成起局、查依据和保存文件这一遍。</p>
+    <p class="scope">练习输入为2026-10-28 12:00:00（UTC+8），是公开合成时间。本文说明qimen-ai当前时家转盘拆补法的操作，适合第一次认盘与复核；软件仍为待外部校核的研习预览版。</p>
+    <p><a href="./#/chart">打开工作台，照做一次 →</a></p>
+
+    <h2 id="scope">1. 先确认时间和取法</h2>
+    <p>本工具使用固定UTC+8标准时间、公历1900—2100年，23点换干支日，中五寄坤、天禽随天芮。它不会根据浏览器所在地自动换算时区，也不自动处理真太阳时或历史夏令时。详细约定集中在<a href="./rules.html#time">规则页</a>。</p>
+    <p>做这次练习时，先只使用下面的公开输入。以后使用其他时间，应先明确它属于什么时间口径；对照其他软件时，按<a href="./chart-differences.html">差异核对清单</a>记录双方设置。</p>
+
+    <h2 id="input">2. 输入演示时间并起局</h2>
+    <ol>
+      <li>在“公历日期”填写<code>2026-10-28</code>。</li>
+      <li>在“时间 · UTC+8”填写<code>12:00:00</code>，占事备注留空。</li>
+      <li>点击“起局”，确认盘面上的时间仍为<code>2026-10-28 12:00:00</code>。</li>
+      <li>展开“本局采用的约定”，核对时家转盘、拆补法及换日、寄宫约定。</li>
+    </ol>
+    <figure>
+      <a href="./guides/input.png"><img src="./guides/input.png" alt="真实工作台的起局表单：公开日期2026-10-28、UTC+8时间12:00:00与起局按钮" width="1080" height="585" loading="lazy" /></a>
+      <figcaption>图1：同一公开输入的起局表单和盘头。日期与时间共同决定输入，备注不参与排盘。</figcaption>
+    </figure>
+
+    <h2 id="chart-header">3. 先读盘头</h2>
+    <p>盘头集中显示所用时间、节气、阴阳遁与局数、三元、旬首和值符值使。按本版程序，用上述输入可复现：</p>
+    <ul>
+      <li>阴遁2局，下元；节气为霜降。</li>
+      <li>旬首甲戌；值符星为天蓬，值使门为休门。</li>
+      <li>日柱乙亥、时柱壬午；四柱信息区另外列出各柱的旬空和驿马。</li>
+    </ul>
+    <p>这些是同一输入在当前规则下的输出，供你检查操作是否一致。它们不是新的独立校盘标准。若你看到的时间或规则不同，先回到输入与约定处核对。</p>
+
+    <h2 id="palace-layers">4. 只读一个宫，认清各层</h2>
+    <p>选择坤二宫（西南）。九宫的位置用于定位，宫内每行的名称用于区分层次；手机上的宫位详情在盘面下方。这张演示盘的坤宫可辨认出：</p>
+    <dl>
+      <dt>天盘干</dt><dd>癸。</dd>
+      <dt>地盘干</dt><dd>戊；另有明确写“寄”的地盘丁，分别保留身份。</dd>
+      <dt>九星</dt><dd>天心。</dd>
+      <dt>八门</dt><dd>休门。</dd>
+      <dt>八神</dt><dd>螣蛇。</dd>
+    </dl>
+    <figure>
+      <a href="./guides/palace.png"><img src="./guides/palace.png" alt="公开演示盘的坤二宫真实裁图：天盘癸、地盘戊、寄地盘丁、天心、休门与螣蛇" width="252" height="235" loading="lazy" /></a>
+      <figcaption>图2：同一公开示例中的坤二宫。主干和标明“寄”的干各有身份，星、门、神按标签辨认。</figcaption>
+    </figure>
+    <p>先把这些字段对应到标签，再看宫内的“时空 申”“时马 申”等辅助标记。查天地盘组合时，按天盘干在前、地盘干在后读取；寄干关系另列。默认《神奇之门》条目和《御定奇门宝鉴》对照各保留自己的名称与来源。</p>
+
+    <h2 id="evidence">5. 点一个符号，回到条件和来源</h2>
+    <ol>
+      <li>点击坤二宫内的“时空 申”。</li>
+      <li>在“时柱空亡”详情中，核对时柱壬午、甲戌旬与本旬空支申、酉。</li>
+      <li>区分“本旬有哪两个空支”和“本宫命中哪个空支”：坤宫对应申，兑七宫另标酉。</li>
+      <li>查看条件说明、规则编号<code>VOID-01</code>和来源链接，辅助规则版本列在详情底部。</li>
+    </ol>
+    <figure>
+      <a href="./guides/void-source.png"><img src="./guides/void-source.png" alt="点击坤二宫时空申后的真实辅助详情：时柱壬午、甲戌旬、旬空申酉及规则来源" width="290" height="341" loading="lazy" /></a>
+      <figcaption>图3：从具体标记查条件与来源。此处突出的是时柱的申空，日空有独立的显示开关和计算对象。</figcaption>
+    </figure>
+    <p>想了解其他标记，可以再点“时马”或天盘干查看对象与条件；同宫同时出现空、马等标记时，各自保留依据。标准盘和专业层的切换控制展示内容，基础布盘不因此改变。</p>
+
+    <h2 id="save-replay">6. 保存一份能复查的文件</h2>
+    <ol>
+      <li>确认这次练习的备注为空，点击“导出 JSON”，保存下载文件。</li>
+      <li>点击“导入 JSON”，选择刚下载的本项目文件。</li>
+      <li>查看提示是否为“基础盘一致；辅助参数一致”。两层分别比较，便于区分布盘与辅助结果的差异。</li>
+    </ol>
+    <figure>
+      <a href="./guides/replay.png"><img src="./guides/replay.png" alt="真实工作台导入刚导出的JSON后，提示基础盘一致与辅助参数一致" width="1384" height="45" loading="lazy" /></a>
+      <figcaption>图4：重导入后的比对提示。重算一致说明本文件在受支持版本下能够复现，不能单独证明算法正确。</figcaption>
+    </figure>
+    <p>JSON保存输入、规则与结果，也可能包含你填写的备注，分享前应查看内容。SVG适合另存盘面图片，导出的图片省略占事备注。“保存此盘”则把当前盘存到本机浏览器；需要跨环境复查时，保留导出的文件及其版本信息。</p>
+    <p>若导入提示有差异或版本不受支持，保留原文件和原版本说明，再按<a href="./chart-differences.html">排盘差异核对步骤</a>记录情况。不要把比对提示改写成现实事件的验证结论。</p>
+
+    <h2 id="next">做完这一遍后看什么？</h2>
+    <p>先确认自己能找到完整时间和取法，能说清一个宫里各字段属于哪一层，能从一个标记追到条件与来源，并成功导出文件。接着可读<a href="./rules.html">规则与验证边界</a>，或用<a href="./chart-differences.html">差异清单</a>练习整理一份可复核记录。</p>
+    <p>本文围绕认盘和复现操作展开。术语与依据仍需结合来源学习，软件目前没有AI解读或完整断事流程。</p>
+    <p><a href="./#/chart">返回工作台再练一次 →</a></p>
+  </main>
+  <footer>
+    <p>内容依据本项目工作台、辅助规则与JSON格式；图片使用同一公开合成输入。原始实现、版本及复核边界见<a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/annotations.md">辅助规则</a>、<a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/api.md">API说明</a>与<a href="https://github.com/agixufeng/qimen-ai/blob/main/docs/verification.md">验收记录</a>。</p>
+    <a href="./about.html">返回功能与本地部署说明</a>
+  </footer>
+</body>
+</html>

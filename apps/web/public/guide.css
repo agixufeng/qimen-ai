@@ -12,3 +12,11 @@ dt { font-weight: 650; }
 dd { margin: .2rem 0 1rem; }
 footer { border-top: 1px solid #d3dcd7; padding-top: 1.5rem; margin-top: 3rem; }
 .scope { padding: 1rem; background: #eaf0ec; border-left: 3px solid #164b43; }
+main { overflow-wrap: anywhere; }
+figure { margin: 1.25rem 0; }
+figure img { display: block; max-width: 100%; height: auto; }
+figcaption { margin-top: .45rem; color: #425a52; font-size: .92rem; }
+table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; }
+caption { text-align: left; font-size: .92rem; margin-bottom: .5rem; }
+th, td { padding: .45rem .5rem; text-align: left; vertical-align: top; border-bottom: 1px solid #d3dcd7; }
+thead th { background: #eaf0ec; }

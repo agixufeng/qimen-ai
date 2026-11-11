@@ -8,7 +8,7 @@ tags: [项目/奇门]
 
 # v0.4.0 公开文件清单
 
-首发共119个源码文件，含仅手动触发的Pages配置。2026-10-31用户确认公开代码、下载包与在线演示，最终仓库名为agixufeng/qimen-ai。生成研习数据不进源码Git，另在静态站/独立数据包中分发。内部研究、宣传草稿、未逐项审阅的素材、本机验收报告和用户输入都不进入公开源码。2026-11-02新增两项已审阅的原创公开演示素材（下列docs/assets），该次源码清单共121项；既有v0.4.0下载附件保持不变。本轮增加4个静态说明资源与2项浏览器验收的测试文件，当前公开清单共126项；GEO/SEO研究草稿与关键词原始资料继续保留本地。
+首发共119个源码文件，含仅手动触发的Pages配置。2026-10-31用户确认公开代码、下载包与在线演示，最终仓库名为agixufeng/qimen-ai。生成研习数据不进源码Git，另在静态站/独立数据包中分发。内部研究、宣传草稿、未逐项审阅的素材、本机验收报告和用户输入都不进入公开源码。2026-11-02新增两项已审阅的原创公开演示素材（下列docs/assets），该次源码清单共121项；既有v0.4.0下载附件保持不变。本轮增加4个静态说明资源与2项浏览器验收的测试文件，该次公开清单共126项；GEO/SEO研究草稿与关键词原始资料继续保留本地。本轮新增两篇教程、空白CSV复核表、四张截图、素材说明与测试，当前清单共135项。
 
 - `.github/ISSUE_TEMPLATE/chart.yml`
 - `.github/PULL_REQUEST_TEMPLATE.md`
@@ -25,7 +25,14 @@ tags: [项目/奇门]
 - `apps/web/index.html`
 - `apps/web/package.json`
 - `apps/web/public/about.html`
+- `apps/web/public/chart-comparison-template.csv`
+- `apps/web/public/chart-differences.html`
+- `apps/web/public/getting-started.html`
 - `apps/web/public/guide.css`
+- `apps/web/public/guides/input.png`
+- `apps/web/public/guides/palace.png`
+- `apps/web/public/guides/void-source.png`
+- `apps/web/public/guides/replay.png`
 - `apps/web/public/rules.html`
 - `apps/web/public/sitemap.xml`
 - `apps/web/src/App.tsx`
@@ -46,12 +53,14 @@ tags: [项目/奇门]
 - `apps/web/tests/dual-readings.spec.ts`
 - `apps/web/tests/discovery.spec.ts`
 - `apps/web/tests/launch.spec.ts`
+- `apps/web/tests/tutorials.spec.ts`
 - `apps/web/tests/workbench.spec.ts`
 - `apps/web/tsconfig.json`
 - `apps/web/vite.config.ts`
 - `docs/annotations.md`
 - `docs/api.md`
 - `docs/assets/README.md`
+- `docs/assets/tutorial-provenance.md`
 - `docs/assets/workbench-2026-10-28.png`
 - `docs/congzhen-reference.md`
 - `docs/deployment.md`

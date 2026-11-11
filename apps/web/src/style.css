@@ -2554,7 +2554,14 @@ button:disabled:hover {
   font-size: 1.15rem;
 }
 
+.project-intro nav {
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+}
+
 .project-intro a {
+  padding: 6px 0;
   color: #164b43;
   text-decoration: underline;
   text-underline-offset: 0.2em;
